@@ -14,33 +14,35 @@
 </head>
 
 <body>
-
+    <!-- Main Weather Dashboard (Current location)-->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
-            <!-- Every grid layout we create starts with an HTML element receiving a class of row -->
-            <!-- align-items-end change the alignment of flex items to end -->
-            <div class="row align-items-end">
-                <div class="col-12 col-md-6">
-                    <img class='img-fluid' src="https://placehold.co/600x400" alt="video placeholder" />
-                </div>
-                <!-- Uses a combination of col-* values to make full-size on small devices and half-size on medium or larger devices -->
+    <!-- Short App description -->
                 <div class="col-12 col-md-6">
                     <h1>Welcome to the app.</h1>
                     <p> Weather Board Current location display </p>
                 </div>
-            </div>
+                <div class="row align-items-end">
+                    <div class="col-12 col-md-6">
+                        <img class='img-fluid' src="https://placehold.co/600x400" alt="video placeholder" />
+                </div>
         </div>
     </header>
+
+    <!-- Location search card -->
     <section class="top-banner">
         <div class="container">
-            <h1 class="heading">Simple Weather App</h1>
+            <h1 class="heading"> Search for a city </h1>
             <form>
-                <input type="text" placeholder="Search for a city" autofocus>
+                <input type="text" placeholder="E.g. Melbourne" autofocus>
                 <button type="submit">SUBMIT</button>
                 <span class="msg"></span>
             </form>
         </div>
     </section>
+
+
+    <!-- 5 day forecast card -->
     <main class="container">
         <section class="row">
             <div class="col-12 col-md-9">
@@ -67,6 +69,7 @@
                 </div>
             </div>
 
+        <!-- Search display -->
             <section class="ajax-section">
                 <div class="container">
                     <ul class="cities"></ul>
@@ -75,5 +78,8 @@
 
 
 </body>
+
+<!-- Script file link -->
+<script src="assets/script.js"></script>
 
 </html>
