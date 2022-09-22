@@ -15,66 +15,98 @@
 
 <body>
     <!-- Main Weather Dashboard (Current location)-->
-    <header class="jumbotron jumbotron-fluid">
+    <header class="jumbotron jumbotron-fluid bg-dark text-light">
         <div class="container">
-    <!-- Short App description -->
-                <div class="col-12 col-md-6">
-                    <h1>Welcome to the app.</h1>
-                    <p> Weather Board Current location display </p>
+            <!-- Use align-items utilities on flexbox containers to align to start, end, center, baseline, or stretch -->
+            <div class="row align-items-end">
+                
+                <!-- Current location display-->
+                <div class="col">
+                    <img class='img-fluid' src="https://via.placeholder.com/1920x1080" alt="video placeholder" />
                 </div>
-                <div class="row align-items-end">
-                    <div class="col-12 col-md-6">
-                        <img class='img-fluid' src="https://placehold.co/600x400" alt="video placeholder" />
-                </div>
+            </div>
         </div>
     </header>
 
-    <!-- Location search card -->
-    <section class="top-banner">
-        <div class="container">
-            <h1 class="heading"> Search for a city </h1>
-            <form>
-                <input type="text" placeholder="E.g. Melbourne" autofocus>
-                <button type="submit">SUBMIT</button>
-                <span class="msg"></span>
-            </form>
+    <div class="search">
+        <!-- Search bar -->
+                <div class="container">
+                    <h1 class="heading"> Search for a city </h1>
+                    <form>
+                        <input type="text" placeholder="E.g. Melbourne" autofocus>
+                        <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
+                        <span class="msg"></span>
+                    </form>
+                </div>
+        </div>
+    <!-- 5 day forecast card -->
+    <section>
+        <h2> 5-day Forecast </h2>
+        <div class="container px-4">
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3">
+                        <h3 class="card-title">Date</h5>
+                            <div class="temp"> 18° C </div>
+                            <img src="" alt="" class="icon">
+                            <div class="description"> Cloudy</div>
+                            <div class="humidity"> Humidity</div>
+                            <div class="wind"> Wind speed: 24 km/h</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <h3 class="card-title">Date</h5>
+                            <div class="temp"> 18° C </div>
+                            <img src="" alt="" class="icon">
+                            <div class="description"> Cloudy</div>
+                            <div class="humidity"> Humidity</div>
+                            <div class="wind"> Wind speed: 24 km/h</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <h3 class="card-title">Date</h5>
+                            <div class="temp"> 18° C </div>
+                            <img src="" alt="" class="icon">
+                            <div class="description"> Cloudy</div>
+                            <div class="humidity"> Humidity</div>
+                            <div class="wind"> Wind speed: 24 km/h</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <h3 class="card-title">Date</h5>
+                            <div class="temp"> 18° C </div>
+                            <img src="" alt="" class="icon">
+                            <div class="description"> Cloudy</div>
+                            <div class="humidity"> Humidity</div>
+                            <div class="wind"> Wind speed: 24 km/h</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <h3 class="card-title">Date</h5>
+                            <div class="temp"> 18° C </div>
+                            <img src="" alt="" class="icon">
+                            <div class="description"> Cloudy</div>
+                            <div class="humidity"> Humidity</div>
+                            <div class="wind"> Wind speed: 24 km/h</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
 
-    <!-- 5 day forecast card -->
-    <main class="container">
-        <section class="row">
-            <div class="col-12 col-md-9">
-                <h2> 5-day Forecast </h2>
+    <!-- Search display -->
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            1 of 5
-                        </div>
-                        <div class="col">
-                            2 of 5
-                        </div>
-                        <div class="col">
-                            3 of 3
-                        </div>
-                        <div class="col">
-                            4 of 5
-                        </div>
-                        <div class="col">
-                            5 of 5
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        <!-- Search display -->
-            <section class="ajax-section">
-                <div class="container">
-                    <ul class="cities"></ul>
-                </div>
-            </section>
+    <section class="ajax-section">
+        <div class="container">
+            <ul class="cities"></ul>
+        </div>
+    </section>
 
 
 </body>
