@@ -16,35 +16,41 @@
 <body>
     <!-- Main Weather Dashboard (Current location)-->
     <header class="jumbotron jumbotron-fluid bg-dark text-light">
+        <section class="search">
+            <!-- Search bar -->
+            <div class="container m-5">
+                <h1 class="heading"> Search for a city </h1>
+                    <form>
+                        <input type="text" placeholder="E.g. Melbourne" autofocus>
+                        <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
+                        <h2 class="msg">  </h2>
+                    </form>
+            </div>
+        </section>
+    
+        <section class="ajax-section">
+            <div class="container">
+                <ul class="cities"></ul>
+            </div>
+        </section>
+        
         <div class="container">
             <!-- Use align-items utilities on flexbox containers to align to start, end, center, baseline, or stretch -->
-            <div class="row align-items-end">
+            <div class="row">
                 
                 <!-- Current location display-->
                 <div class="col">
-                    <img class='img-fluid' src="https://via.placeholder.com/1920x1080" alt="video placeholder" />
+                    <h3 class="card-title"> Date</h5>
+                        <div class="temp"> 18° C </div>
+                        <img src="" alt="" class="icon">
+                        <div class="description"> Cloudy</div>
+                        <div class="humidity"> Humidity</div>
+                        <div class="wind"> Wind speed: 24 km/h</div>
+                </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <section class="search">
-        <!-- Search bar -->
-        <div class="container m-5">
-            <h1 class="heading"> Search for a city </h1>
-                <form>
-                    <input type="text" placeholder="E.g. Melbourne" autofocus>
-                    <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
-                    <h2 class="msg" id="msg"> Output here </h2>
-                </form>
-        </div>
-    </section>
-
-    <section class="ajax-section">
-        <div class="container">
-            <ul class="cities"></ul>
-        </div>
-    </section>
 
     <!-- 5 day forecast card -->
     <section>
