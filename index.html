@@ -28,17 +28,24 @@
         </div>
     </header>
 
-    <div class="search">
+    <section class="search">
         <!-- Search bar -->
-                <div class="container m-5">
-                    <h1 class="heading"> Search for a city </h1>
-                    <form>
-                        <input type="text" placeholder="E.g. Melbourne" autofocus>
-                        <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
-                        <span class="msg"></span>
-                    </form>
-                </div>
+        <div class="container m-5">
+            <h1 class="heading"> Search for a city </h1>
+                <form>
+                    <input type="text" placeholder="E.g. Melbourne" autofocus>
+                    <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
+                    <h2 class="msg" id="msg"> Output here </h2>
+                </form>
         </div>
+    </section>
+
+    <section class="ajax-section">
+        <div class="container">
+            <ul class="cities"></ul>
+        </div>
+    </section>
+
     <!-- 5 day forecast card -->
     <section>
         
@@ -100,19 +107,11 @@
     </section>
 
 
-    <!-- Search display -->
-
-
-    <section class="ajax-section">
-        <div class="container">
-            <ul class="cities"></ul>
-        </div>
-    </section>
-
 
 </body>
 
 <!-- Script file link -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="assets/script.js"></script>
 
 </html>
