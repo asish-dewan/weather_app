@@ -1,7 +1,6 @@
-/* // Test API
+// Test API
 
-var requestUrl = "https://bulk.openweathermap.org/snapshot/weather_14.json.gz?appid=09305fa7af376150d681f93c53d839a7"
-var responseText = $(".msg");
+/* var requestUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=09305fa7af376150d681f93c53d839a7';
 
 function getApi(requestUrl) {
 // Call API
@@ -18,8 +17,31 @@ fetch(requestUrl)
 
 getApi (requestUrl); */
 
+// Test 2 
 
-// Define Variables
+    // get Current weather bulk files
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Melbourne&unit=metric&appid=09305fa7af376150d681f93c53d839a7';
+
+    function getCurrentWeather (){
+    fetch(apiUrl)
+    .then (function (response) {
+        if (response.status == 200) {
+            console.log("This is working!" + response);
+            response.json().then (function (data) {
+                console.log (data);
+                //displayWeather(data, city);
+        });
+        }
+        else {
+            alert('Error' + response.statusText);
+        }
+    });
+    }
+
+getCurrentWeather ();
+
+
+/* // Define Variables
 
 var searchBarEl = $('#search-bar');
 var nameInputEl = $('#cityname');
@@ -54,7 +76,7 @@ var getCurrentWeather = function (city) {
             console.log("This is working!" + response);
             response.json().then (function (data) {
                 console.log (data);
-                displayWeather(data, city);
+                //displayWeather(data, city);
         });
         }
         else {
@@ -63,3 +85,4 @@ var getCurrentWeather = function (city) {
     })
 };
 
+ */
