@@ -1,4 +1,4 @@
-// Test API
+/* // Test API
 
 var requestUrl = "https://bulk.openweathermap.org/snapshot/weather_14.json.gz?appid=09305fa7af376150d681f93c53d839a7"
 var responseText = $(".msg");
@@ -16,27 +16,50 @@ fetch(requestUrl)
     });
 }
 
-getApi (requestUrl);
+getApi (requestUrl); */
 
 
-var getCurrentWeather = function () {
+// Define Variables
+
+var searchBarEl = $('#search-bar');
+var nameInputEl = $('#cityname');
+var searchContainerEl = $('#search-container');
+var searchTerm = $('#search-term');
+
+
+// Search bar event 
+
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+
+    var city = nameInputEl.value.trim();
+
+    if (city) {
+        getCurrentWeather(city);
+
+        searchContainerEl.textContent = '';
+        nameInputEl.value = '';
+    } else {
+        alert('Please enter a City name');
+    }
+    };
+
+var getCurrentWeather = function (city) {
     // get Current weather bulk files
-    var apiUrl = "https://bulk.openweathermap.org/snapshot/weather_14.json.gz?appid=09305fa7af376150d681f93c53d839a7"
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=09305fa7af376150d681f93c53d839a7';
 
     fetch(apiUrl)
     .then (function (response) {
         if (response.status == 200) {
             console.log("This is working!" + response);
-            response.json()
-            .then (function (data) {
+            response.json().then (function (data) {
                 console.log (data);
-                displayWeather(data);
+                displayWeather(data, city);
         });
         }
-    }
-    )
-}
+        else {
+            alert('Error' + response.statusText);
+        }
+    })
+};
 
-var displayWeather = function (){
-    
-} 

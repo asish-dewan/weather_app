@@ -20,37 +20,20 @@
             <!-- Search bar -->
             <div class="container m-5">
                 <h1 class="heading"> Search for a city </h1>
-                    <form>
-                        <input type="text" placeholder="E.g. Melbourne" autofocus>
+                    <form id="search-bar">
+                        <input type="text" id="cityname" placeholder="E.g. Melbourne" autofocus="true" class="form-input"/>
                         <button type="submit">SEARCH <i class="fa-duotone fa-magnifying-glass"></i></button>
-                        <h2 class="msg">  </h2>
                     </form>
             </div>
         </section>
-    
-        <section class="ajax-section">
-            <div class="container">
-                <ul class="cities"></ul>
-            </div>
-        </section>
-        
-        <div class="container">
-            <!-- Use align-items utilities on flexbox containers to align to start, end, center, baseline, or stretch -->
-            <div class="row">
-                
-                <!-- Current location display-->
-                <div class="col">
-                    <h3 class="card-title"> Date</h5>
-                        <div class="temp"> 18° C </div>
-                        <img src="" alt="" class="icon">
-                        <div class="description"> Cloudy</div>
-                        <div class="humidity"> Humidity</div>
-                        <div class="wind"> Wind speed: 24 km/h</div>
-                </div>
-                </div>
-            </div>
-        </div>
     </header>
+
+        <div class="col m-5">
+            <h2 class="subtitle">Showing Current Weather for: <span id="search-term"></span></h2>
+            <!-- Empty HTML element to display current weather data -->
+            <div id="search-container" class="list-group"></div>
+        </div>
+        
 
     <!-- 5 day forecast card -->
     <section>
