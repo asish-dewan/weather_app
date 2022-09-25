@@ -19,7 +19,7 @@ getApi (requestUrl); */
 
 // Define Variables
 
-var searchBarEl = $('#search-bar');
+var searchCityEl = $('#search-city');
 var cityNameEl = $('#city-name');
 var currentWeatherEl = $('#current-weather');
 var currentCity = $('#current-city');
@@ -38,27 +38,43 @@ function displayWeather(event){
         city=cityNameEl.val().trim();
         getCurrentWeather(city);
     }
-
-    currentCity.textContent = val(cityNameEl);
 }
 
-    // get Current weather bulk files
-    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Melbourne&unit=metric&appid=09305fa7af376150d681f93c53d839a7';
 
-    function getCurrentWeather (){
+   // get Current weather 
+    
+    function getCurrentWeather (city){
+
+        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric"+ "&APPID=" + APIkey;
     fetch(apiUrl)
     .then (function (response) {
-        if (response.status == 200) {
+            if (response.status == 200) {
             console.log("This is working!" + response);
             response.json().then (function (data) {
                 console.log (data);
-                //displayWeather(data, city);
-        });
-        }
-        else {
-            alert('Error' + response.statusText);
-        }
-    })
-}
 
-getCurrentWeather ();
+        const {name} = data;
+        const { icon, description } = data.weather[0];
+        const { temp, humidity } = data.main;
+        const { speed } = data.wind;
+        
+        // Display city name from response
+        $(currentCity).html(name);
+        // Display description 
+        $(currentDescription).html(description);
+        // Display current Temperature
+        $(currentTemperature).html(temp + "°C");
+        // Display the Humidity
+        $(currentHumidity).html(humidity+"%");
+        //Display Wind speed 
+        $(currentWind).html(speed + "MPH");
+        })
+    }
+    });
+    }
+    
+    
+
+
+
+$("#search-button").on("click",displayWeather);
